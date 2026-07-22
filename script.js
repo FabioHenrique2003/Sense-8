@@ -252,3 +252,59 @@ setInterval(()=>{
     0.15+Math.random()*0.15;
 
 },2500);
+
+/* ======================================
+   ESTRELAS CADENTES
+====================================== */
+
+function createStar(){
+
+    const star=document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=Math.random()*window.innerWidth+"px";
+
+    star.style.top=Math.random()*300+"px";
+
+    star.style.animationDuration=
+
+    2+Math.random()*2+"s";
+
+    document
+    .getElementById("shootingStars")
+    .appendChild(star);
+
+    setTimeout(()=>{
+
+        star.remove();
+
+    },4000);
+
+}
+
+setInterval(createStar,2500);
+
+/* ======================================
+   FRASES FINAIS
+====================================== */
+
+const ending=document.querySelector(".ending");
+
+const observer=new MutationObserver(()=>{
+
+    ending.style.animation="fadeEnding 2s";
+
+});
+
+observer.observe(
+
+document.getElementById("scene5"),
+
+{
+
+attributes:true
+
+}
+
+);
