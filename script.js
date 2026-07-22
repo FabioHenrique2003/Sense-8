@@ -153,7 +153,6 @@ const phrases=[
 
 function playVideo(){
 
-    video.muted=true;
 
     video.play();
 
