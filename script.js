@@ -122,16 +122,20 @@ startButton.onclick=()=>{
 =========================== */
 
 document
-
 .getElementById("yes1")
+.addEventListener("click",async()=>{
 
-.onclick=()=>{
+    await fadeIn();
 
     showScene(2);
 
-    playVideo();
+    video.currentTime=0;
 
-}
+    video.play();
+
+    await fadeOut();
+
+});
 
 /* ===========================
    FRASES DURANTE O VÍDEO
@@ -182,6 +186,15 @@ function playVideo(){
 
 }
 
+video.addEventListener("ended",async()=>{
+
+    await fadeIn();
+
+    showScene(3);
+
+    await fadeOut();
+
+});
 /* ===========================
    SEGUNDA PERGUNTA
 =========================== */
@@ -233,6 +246,31 @@ function makeRun(button){
     );
 
 }
+
+function fadeIn(){
+
+    return new Promise(resolve=>{
+
+        fadeScreen.classList.add("show");
+
+        setTimeout(resolve,800);
+
+    });
+
+}
+
+function fadeOut(){
+
+    return new Promise(resolve=>{
+
+        fadeScreen.classList.remove("show");
+
+        setTimeout(resolve,800);
+
+    });
+
+}
+
 
 makeRun(document.getElementById("no1"));
 
