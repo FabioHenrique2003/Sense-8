@@ -1,6 +1,8 @@
 /* ===========================
    ELEMENTOS
 =========================== */
+const fadeScreen = document.getElementById("fadeScreen");
+const video = document.getElementById("memoryVideo");
 
 const scenes = document.querySelectorAll(".scene");
 
@@ -8,8 +10,6 @@ const typing = document.getElementById("typing");
 const subtyping = document.getElementById("subtyping");
 
 const startButton = document.getElementById("startButton");
-
-const video = document.getElementById("dragonVideo");
 
 const videoPhrase = document.getElementById("videoPhrase");
 
